@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S1 Fisioterapi - STIKES Bhakti Husada</title>
+    <style>
+        :root {
+            --primary: #4CB9E7;
+            --secondary: #3081D0;
+            --accent: #1640D6;
+            --light: #F1F6F9;
+            --dark: #212A3E;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+        }
+
+        .top-bar {
+            background: var(--accent);
+            color: white;
+            padding: 8px 20px;
+            font-size: 14px;
+        }
+
+        .top-bar-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .social-links a {
+            color: white;
+            margin-left: 15px;
+            text-decoration: none;
+        }
+
+        .main-header {
+            background: white;
+            padding: 15px 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            color: var(--dark);
+        }
+
+        .logo img {
+            height: 60px;
+        }
+
+        .logo-text {
+            line-height: 1.2;
+        }
+
+        .logo-text h1 {
+            font-size: 24px;
+            color: var(--accent);
+        }
+
+        .logo-text p {
+            font-size: 14px;
+            color: var(--dark);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            color: var(--dark);
+            text-decoration: none;
+            padding: 10px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary);
+        }
+
+        .hero-section {
+            height: 500px;
+            background: linear-gradient(rgba(76, 185, 231, 0.8), rgba(48, 129, 208, 0.8)),
+                        url('/api/placeholder/1920/500') center/cover;
+            color: white;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-content h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .cta-button:hover {
+            background: var(--secondary);
+        }
+
+        .features {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .feature-card img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            text-align: center;
+            color: var(--dark);
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #666;
+        }
+
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 40px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .footer-section p, .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            line-height: 1.6;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .hero-content h2 {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <span>📧 info@bhaktihusada.ac.id | 📞 (021) 1234567</span>
+            <div class="social-links">
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <div class="header-content">
+            <a href="#" class="logo">
+                <img src="/api/placeholder/60/60" alt="Logo STIKES Bhakti Husada">
+                <div class="logo-text">
+                    <h1>S1 Fisioterapi</h1>
+                    <p>STIKES Bhakti Husada</p>
+                </div>
+            </a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#">Beranda</a></li>
+                    <li><a href="#">Profil</a></li>
+                    <li><a href="#">Akademik</a></li>
+                    <li><a href="#">Fasilitas</a></li>
+                    <li><a href="#">Penelitian</a></li>
+                    <li><a href="#">Kontak</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div class="hero-content">
+            <h2>Program Studi S1 Fisioterapi</h2>
+            <p>Membentuk fisioterapis profesional yang kompeten, beretika, dan siap menghadapi tantangan global dalam pelayanan kesehatan.</p>
+            <a href="#" class="cta-button">Daftar Sekarang</a>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="section-title">
+            <h2>Mengapa Memilih S1 Fisioterapi?</h2>
+            <p>Keunggulan Program Studi S1 Fisioterapi STIKES Bhakti Husada</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <img src="/api/placeholder/80/80" alt="Akreditasi">
+                <h3>Terakreditasi B</h3>
+                <p>Program studi dengan kualitas pendidikan yang telah terakreditasi oleh BAN-PT.</p>
+            </div>
+            <div class="feature-card">
+                <img src="/api/placeholder/80/80" alt="Fasilitas">
+                <h3>Fasilitas Modern</h3>
+                <p>Dilengkapi dengan laboratorium dan peralatan fisioterapi terkini.</p>
+            </div>
+            <div class="feature-card">
+                <img src="/api/placeholder/80/80" alt="Dosen">
+                <h3>Dosen Berkualitas</h3>
+                <p>Dibimbing oleh dosen profesional berpengalaman dan tersertifikasi.</p>
+            </div>
+            <div class="feature-card">
+                <img src="/api/placeholder/80/80" alt="Kerjasama">
+                <h3>Kerjasama Luas</h3>
+                <p>Bermitra dengan berbagai rumah sakit dan klinik untuk praktik klinis.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Tentang Kami</h3>
+                <p>Program Studi S1 Fisioterapi STIKES Bhakti Husada berkomitmen menghasilkan lulusan berkualitas dalam bidang fisioterapi.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Kontak</h3>
+                <ul>
+                    <li>📍 Jl. Contoh No. 123, Jakarta</li>
+                    <li>📞 (021) 1234567</li>
+                    <li>📧 info@bhaktihusada.ac.id</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Link Cepat</h3>
+                <ul>
+                    <li><a href="#">Pendaftaran Online</a></li>
+                    <li><a href="#">Kalender Akademik</a></li>
+                    <li><a href="#">Beasiswa</a></li>
+                    <li><a href="#">Galeri</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
